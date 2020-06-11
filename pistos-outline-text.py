@@ -22,7 +22,8 @@ def outline_text(image, layer, outline_size, layer_opacity) :
         layer_opacity,
         0
     )
-    pdb.gimp_image_insert_layer(image, new_layer, None, 1)
+    position = image.layers.index(layer)+1
+    pdb.gimp_image_insert_layer(image, new_layer, None, position)
 
     pdb.gimp_selection_feather(image, outline_size)
 
